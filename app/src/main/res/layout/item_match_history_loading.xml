@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/background_match_history"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp">
+
+        <View
+            android:id="@+id/tv_status_partida_shimmer"
+            android:layout_width="86dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/shimmer_background"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_champion_played_shimmer"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <View
+            android:id="@+id/iv_champion_played_shimmer"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:background="@color/shimmer_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/tv_kda_shimmer"
+            tools:text="5/2/10"
+            android:layout_width="56dp"
+            android:layout_height="16dp"
+            android:background="@color/shimmer_background"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_status_partida_shimmer"
+            app:layout_constraintTop_toBottomOf="@+id/tv_status_partida_shimmer" />
+
+        <TextView
+            android:id="@+id/tv_data_shimmer"
+            android:layout_width="72dp"
+            android:textSize="12sp"
+            android:layout_height="16dp"
+            android:background="@color/shimmer_background"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_status_partida_shimmer"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kda_shimmer" />
+
+        <View
+            android:id="@+id/linearLayout2_shimmer"
+            android:layout_width="124dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/shimmer_background"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <View
+            android:id="@+id/linearLayout3_shimmer"
+            android:layout_width="124dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/shimmer_background"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+
+        <View
+            android:id="@+id/tv_game_mode_shimmer"
+            android:layout_width="94dp"
+            android:layout_height="20dp"
+            android:background="@color/shimmer_background"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3_shimmer"
+            tools:text="Ranked Solo/Duo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_status_bet_shimmer"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:background="#40a2a2a2"
+        android:layout_height="48dp">
+
+        <ImageView
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            android:layout_alignParentStart="true"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/tv_status_bet"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_baseline_attach_money_24" />
+        <TextView
+            android:id="@+id/tv_status_bet"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="8dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_regular"
+            android:paddingBottom="8dp"
+            tools:text="@string/status_bet_aposta_partida"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_collapse_bets"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/the_green"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+    <ImageView
+        android:id="@+id/iv_summoner_profile"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_profile"
+        android:clipToOutline="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/yasuo_profile" />
+
+    <ProgressBar
+        android:id="@+id/loading_summoner_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tv_summoner_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_summoner_profile"
+        tools:text="Level 20" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/iv_rank_solo_duo"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_summoner_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_summoner_profile"
+        tools:src="@drawable/platinum" />
+
+    <TextView
+        android:id="@+id/tv_rank_solo_duo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/match_type_ranked_solo"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_rank_solo_duo"
+        app:layout_constraintStart_toStartOf="@+id/iv_rank_solo_duo"
+        app:layout_constraintTop_toBottomOf="@+id/iv_rank_solo_duo" />
+
+
+    <TextView
+        android:id="@+id/tv_rank_solo_duo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        tools:text="Platina II"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rank_solo_duo"
+        app:layout_constraintStart_toStartOf="@+id/tv_rank_solo_duo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rank_solo_duo" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_ranked_solo_duo_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rank_solo_duo_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_rank_solo_duo_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rank_solo_duo_name">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:text="@string/label_winrate"
+                android:textColor="@color/boston_blue" />
+
+            <TextView
+                android:id="@+id/tv_rank_solo_duo_winrate"
+                tools:text="52%"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_vitoria"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_rank_solo_duo_vitorias"
+                tools:text="74"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_derrota"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_rank_solo_duo_derrotas"
+                tools:text="70"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/iv_rank_flex"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_summoner_profile"
+        app:layout_constraintStart_toStartOf="@+id/iv_summoner_profile"
+        app:layout_constraintTop_toBottomOf="@+id/tv_summoner_level"
+        tools:src="@drawable/challenger" />
+
+    <TextView
+        android:id="@+id/tv_rank_flex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/match_type_ranked_flex"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_rank_flex"
+        app:layout_constraintStart_toStartOf="@+id/iv_rank_flex"
+        app:layout_constraintTop_toBottomOf="@+id/iv_rank_flex" />
+
+    <TextView
+        android:id="@+id/tv_rank_flex_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        tools:text="Challenger"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rank_flex"
+        app:layout_constraintStart_toStartOf="@+id/tv_rank_flex"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rank_flex" />
+
+    <LinearLayout
+        android:id="@+id/layout_ranked_flex_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rank_flex_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_rank_flex_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rank_flex_name">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_winrate"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text="52%"
+                android:id="@+id/tv_rank_flex_winrate"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_vitoria"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text="74"
+                android:id="@+id/tv_rank_flex_vitorias"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_derrota"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text="70"
+                android:id="@+id/tv_rank_flex_derrotas"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_rank_tft"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_summoner_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_summoner_profile"
+        tools:src="@drawable/silver" />
+
+    <TextView
+        android:id="@+id/tv_rank_tft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/match_type_ranked_tft"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_rank_tft"
+        app:layout_constraintStart_toStartOf="@+id/iv_rank_tft"
+        app:layout_constraintTop_toBottomOf="@+id/iv_rank_tft" />
+
+    <TextView
+        android:id="@+id/tv_rank_tft_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        tools:text="Prata IV"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rank_tft"
+        app:layout_constraintStart_toStartOf="@+id/tv_rank_tft"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rank_tft" />
+
+    <LinearLayout
+        android:id="@+id/layout_ranked_tft_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rank_tft_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_rank_tft_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rank_tft_name">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_winrate"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text="52%"
+                android:id="@+id/tv_rank_tft_winrate"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_vitoria"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text="74"
+                android:id="@+id/tv_rank_tft_vitorias"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_derrota"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text="70"
+                android:id="@+id/tv_rank_tft_derrotas"
+                android:textColor="@color/boston_blue"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:tabGravity="fill"
+        app:tabMode="fixed" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_match_history_loading"/>
+            <include layout="@layout/item_match_history_loading"/>
+            <include layout="@layout/item_match_history_loading"/>
+
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+
+    <Button
+        android:id="@+id/btn_bet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/btn_apostar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="124dp"
+    android:background="@drawable/background_btn_bet"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_bet_type"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/background_profile"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/baron2" />
+
+    <TextView
+        android:id="@+id/tv_bet_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_bold"
+        tools:textColor="@color/purple_200"
+        app:layout_constraintStart_toEndOf="@+id/iv_bet_type"
+        app:layout_constraintTop_toTopOf="@+id/iv_bet_type"
+        tools:text="First Baron" />
+
+    <TextView
+        android:id="@+id/tv_bet_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintEnd_toStartOf="@+id/tv_odds"
+        app:layout_constraintStart_toEndOf="@+id/iv_bet_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bet_name"
+        tools:text="Faça o primeiro Baron da partida" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkboxAposta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:text="@string/btn_apostar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_bet_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bet_description" />
+
+    <TextView
+        android:id="@+id/tv_odds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2.23:1"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/tv_quantity_bet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="@string/valor_aposta_hint"
+        app:layout_constraintBottom_toBottomOf="@+id/checkboxAposta"
+        app:layout_constraintStart_toEndOf="@+id/checkboxAposta" />
+</androidx.constraintlayout.widget.ConstraintLayout>

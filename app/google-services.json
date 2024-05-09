@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "579943763289",
+    "project_id": "bongobet",
+    "storage_bucket": "bongobet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579943763289:android:c7ad6bd99ca6b976105048",
+        "android_client_info": {
+          "package_name": "com.mazer.bongobet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579943763289-162rakvivn3c73pm5c618h25k04q0g8b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mazer.bongobet",
+            "certificate_hash": "59eedf6e9b664e364136baba809db946d839240d"
+          }
+        },
+        {
+          "client_id": "579943763289-arll9gbit15a0c05ubc2adjqkl0ld00q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9IlFXHVcv51673M2G1ek8eW3hHUQ-U4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579943763289-arll9gbit15a0c05ubc2adjqkl0ld00q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

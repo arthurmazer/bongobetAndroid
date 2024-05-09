@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/summoner_search_fragment">
+
+    <fragment
+        android:id="@+id/summoner_search_fragment"
+        android:name="com.mazer.bongobet.ui.home.SummonerSearchFragment"
+        android:label="Summoner Search Fragment">
+        <action
+            android:id="@+id/action_summoner_search_to_lol_profile"
+            app:destination="@id/lol_profile_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lol_profile_fragment"
+        android:name="com.mazer.bongobet.ui.lolprofile.LolProfileFragment"
+        android:label="Lol Profile Fragment">
+        <action
+            android:id="@+id/action_lol_profile_to_bet_type"
+            app:destination="@id/bet_type_fragment" />
+        <argument
+            android:name="summoner_name"
+            app:argType="string"/>
+        <argument
+            android:name="puuid"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/bet_type_fragment"
+        android:name="com.mazer.bongobet.ui.bet.step1.BetFragment"
+        android:label="Bet Step 1">
+        <action
+            android:id="@+id/action_bet_to_bet_success"
+            app:destination="@id/bet_success_fragment" />
+        <argument
+            android:name="puuid"
+            app:argType="string"/>
+        <argument
+            android:name="summoner_name"
+            app:argType="string"/>
+        <argument
+            android:name="summoner_profile_photo"
+            app:argType="string"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/bet_success_fragment"
+        android:name="com.mazer.bongobet.ui.bet.step4.BetSuccessFragment"
+        android:label="Bet Step 4">
+        <argument
+            android:name="puuid"
+            app:argType="string"/>
+        <argument
+            android:name="summoner_name"
+            app:argType="string"/>
+        <argument
+            android:name="summoner_profile_photo"
+            app:argType="string"/>
+        <argument
+            android:name="game_type"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_bet_success_to_init"
+            app:destination="@id/summoner_search_fragment" />
+    </fragment>
+
+</navigation>

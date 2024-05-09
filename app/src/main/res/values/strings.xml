@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">BongoBet</string>
+    <string name="gmail_web_client_id">579943763289-d1claa60s32r4v4kph8tfvocla8djghr.apps.googleusercontent.com</string>
+
+    <!-- Login -->
+    <string name="login_google">Login via GMAIL</string>
+    <string name="login_facebook">Login via FACEBOOK</string>
+    <string name="bem_vindo">Bem-Vindo</string>
+    <string name="developed_by">Desenvolvido por A. Mazer</string>
+
+    <!-- Home -->
+    <string name="summoner_hint">Nome do Invocador + #TAG</string>
+    <string name="btn_buscar">Buscar</string>
+
+    <!-- Bet -->
+    <string name="match_type_ranked_solo">Ranked Solo/Duo</string>
+    <string name="match_type_ranked_flex">Ranked FLEX</string>
+    <string name="match_type_ranked_aram">ARAM</string>
+
+    <string name="match_type_ranked_tft">Ranked TFT</string>
+    <string name="label_winrate">WR</string>
+    <string name="label_vitoria">V</string>
+    <string name="label_derrota">D</string>
+    <string name="pager_opt_solo_duo">League of Legends</string>
+    <string name="pager_opt_flex">Flex</string>
+    <string name="pager_opt_tft">TFT</string>
+    <string name="pager_opt_aram">ARAM</string>
+    <string name="btn_apostar">APOSTAR</string>
+    <!-- Bet Step 1 -->
+    <string name="label_apostar_em">Apostar em</string>
+    <string name="label_match_type">Tipo de Partida</string>
+    <string name="label_bet_type">Escolha suas apostas</string>
+    <string name="label_confirmacao_apostas">Suas Apostas</string>
+    <string name="btn_avancar">Avançar</string>
+    <string name="valor_aposta_hint">R$ Valor</string>
+    <!-- Confirmation Bet -->
+    <string name="game_name_lol">League of Legends</string>
+    <string name="label_game_name">Jogo: %s</string>
+    <string name="label_game_type">Modos: %s</string>
+    <string name="label_bets">Suas Apostas</string>
+    <string name="label_bet_quantity">Aposta: R$ %s</string>
+    <string name="label_bet_odds">ODDS: %s</string>
+    <string name="label_bet_profit">Recompensa: R$ %s</string>
+    <string name="tv_title_confirm_bet">Confirme sua aposta</string>
+    <string name="tv_btn_confirm_bet">Apostar</string>
+    <string name="tv_btn_cancel_bet">Cancelar</string>
+
+    <!-- Bet Step Sucesso -->
+    <string name="label_aposta_em">Aposta em</string>
+    <string name="label_sucesso">Registrada com sucesso!</string>
+    <string name="label_sucesso_subtext">Agora é só jogar uma partida de %s</string>
+    <string name="label_sua_ultima_partida_title">Sua aposta valerá para a próxima %s jogada</string>
+    <string name="label_sua_ultima_partida_text">A última partida considerada é:</string>
+    <string name="btn_concluir">Concluir</string>
+    <string name="btn_confirmar">Confirmar</string>
+    <string name="label_rules_one">Caso sua próxima partida não seja %s, você será re-embolsado!</string>
+    <string name="label_rules_expirar">Essa aposta expira em 90 minutos</string>
+
+    <!-- Wallet -->
+    <string name="wallet_title">Seu saldo atual</string>
+    <string name="wallet_quantity">R$ %s</string>
+    <string name="wallet_em_andamento">Em andamento</string>
+    <string name="wallet_finalizadas">Apostas Finalizadas</string>
+    <string name="label_bet_status">Status: %s</string>
+    <string name="label_bet_blocked_quantity">Saldo em Aposta: R$ %s</string>
+    <string name="btn_depositar">Depositar</string>
+    <string name="btn_sacar">Sacar</string>
+
+    <!-- Match History -->
+    <string name="status_vitoria">VITÓRIA</string>
+    <string name="status_playing">Jogando</string>
+    <string name="status_derrota">Derrota</string>
+    <string name="status_remake">Recriação</string>
+    <string name="btn_aguarde">Aguarde</string>
+
+    <!-- Lol Profile -->
+    <string name="level_placeholder">Level %s</string>
+</resources>
