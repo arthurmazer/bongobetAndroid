@@ -16,6 +16,10 @@ class SummonerSearchViewModel(
     private val _summonerSearchState = MutableStateFlow<SummonerSearchUiState>(SummonerSearchUiState.Initial)
     val summonerSearchState: StateFlow<SummonerSearchUiState> = _summonerSearchState
 
+    init {
+        getStreamersTwitchList()
+    }
+
     private fun getRiotAccount(summonerName: String, tag: String){
         viewModelScope.launch {
             lolRepository.getRiotAccountData(summonerName,tag).collectLatest { result ->
@@ -23,6 +27,18 @@ class SummonerSearchViewModel(
                     updateState(SummonerSearchUiState.SummonerFound(result.data))
                 }else{
                     updateState(SummonerSearchUiState.SummonerNotFound(result.message ?: "Summoner não encontrado!"))
+                }
+            }
+        }
+    }
+
+    private fun getStreamersTwitchList(){
+        viewModelScope.launch {
+            lolRepository.getStreamersTwitchList().collectLatest { result ->
+                if (result.data != null){
+                    updateState(SummonerSearchUiState.StreamerListFound(result.data))
+                }else{
+                    updateState(SummonerSearchUiState.StreamerListNotFound(result.message ?: "Stremamers não encontrado!"))
                 }
             }
         }

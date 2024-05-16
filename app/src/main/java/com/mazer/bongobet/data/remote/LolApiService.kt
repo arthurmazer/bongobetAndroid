@@ -49,4 +49,7 @@ interface LolApiService {
     suspend fun getBetHistory(
         @Query("user_email") userEmail: String? = null
     ): Response<List<BetHistoryResponse>>
+
+    @GET("check_streamer_online/")
+    suspend fun getStreamersTwitchList(): Response<List<Streamer>>
 }

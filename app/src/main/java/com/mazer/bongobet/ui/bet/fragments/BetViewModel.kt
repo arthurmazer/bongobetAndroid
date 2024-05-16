@@ -1,8 +1,7 @@
-package com.mazer.bongobet.ui.bet.step1
+package com.mazer.bongobet.ui.bet.fragments
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mazer.bongobet.domain.repositories.LoginRepository
 import com.mazer.bongobet.domain.repositories.LeagueOfLegendsRepository
 import com.mazer.bongobet.domain.usecases.BetUseCase
 import com.mazer.bongobet.ui.common.toIdBetStringArray

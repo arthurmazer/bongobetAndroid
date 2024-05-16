@@ -73,6 +73,45 @@ fun String.getColor(context: Context): Int{
     }
 }
 
+fun String.getRankDrawable(): Int {
+    return when (this.lowercase()){
+        "iron" -> {
+            R.drawable.iron
+        }
+        "bronze" -> {
+            R.drawable.bronze
+        }
+        "silver" -> {
+            R.drawable.silver
+        }
+        "gold" -> {
+            R.drawable.gold
+        }
+        "platinum" -> {
+            R.drawable.platinum
+        }
+        "emerald" -> {
+            R.drawable.emerald
+        }
+        "diamond" -> {
+            R.drawable.diamond
+        }
+        "master" -> {
+            R.drawable.master
+        }
+        "grandmaster" -> {
+            R.drawable.grandmaster
+        }
+        "challenger" -> {
+            R.drawable.challenger
+        }
+        else -> {
+            R.drawable.unranked
+        }
+
+    }
+}
+
 fun List<BetTypeListUi>.toUserBetList(): ArrayList<UserBet> {
     val arrayUserBet: ArrayList<UserBet> = arrayListOf()
     for (item in this){

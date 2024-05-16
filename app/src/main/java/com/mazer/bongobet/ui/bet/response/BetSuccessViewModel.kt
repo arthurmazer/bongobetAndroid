@@ -1,4 +1,4 @@
-package com.mazer.bongobet.ui.bet.step4
+package com.mazer.bongobet.ui.bet.response
 
 import BetSuccessUiState
 import androidx.lifecycle.ViewModel

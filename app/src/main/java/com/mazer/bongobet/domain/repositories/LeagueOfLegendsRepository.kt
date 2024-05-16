@@ -1,10 +1,7 @@
 package com.mazer.bongobet.domain.repositories
 
 import com.mazer.bongobet.common.utils.Result
-import com.mazer.bongobet.domain.entities.BetType
-import com.mazer.bongobet.domain.entities.GameType
-import com.mazer.bongobet.domain.entities.LolUser
-import com.mazer.bongobet.domain.entities.RiotAccount
+import com.mazer.bongobet.domain.entities.*
 import com.mazer.bongobet.domain.entities.pojo.BetHistoryResponse
 import com.mazer.bongobet.domain.entities.pojo.BetResponse
 import com.mazer.bongobet.domain.entities.pojo.MatchHistoryResponse
@@ -19,4 +16,5 @@ interface LeagueOfLegendsRepository {
     fun getBetsAvailable(gameTypeId: Int, puuid: String): Flow<Result<List<BetType>>>
     fun getBetsHistory(userEmail: String): Flow<Result<List<BetHistoryResponse>>>
     fun createBet(idBets: String, idQuantities: String, puuid: String, userEmail: String ): Flow<Result<BetResponse>>
+    fun getStreamersTwitchList(): Flow<Result<List<Streamer>>>
 }

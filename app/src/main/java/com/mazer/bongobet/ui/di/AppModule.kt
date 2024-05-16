@@ -16,8 +16,8 @@ import com.mazer.bongobet.domain.repositories.LoginRepository
 import com.mazer.bongobet.domain.repositories.WalletRepository
 import com.mazer.bongobet.domain.usecases.*
 import com.mazer.bongobet.ui.MainViewModel
-import com.mazer.bongobet.ui.bet.step1.BetViewModel
-import com.mazer.bongobet.ui.bet.step4.BetSuccessViewModel
+import com.mazer.bongobet.ui.bet.fragments.BetViewModel
+import com.mazer.bongobet.ui.bet.response.BetSuccessViewModel
 import com.mazer.bongobet.ui.home.SummonerSearchViewModel
 import com.mazer.bongobet.ui.login.LoginViewModel
 import com.mazer.bongobet.ui.lolprofile.LolProfileViewModel

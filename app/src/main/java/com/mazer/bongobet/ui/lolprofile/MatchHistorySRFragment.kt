@@ -51,9 +51,6 @@ class MatchHistorySRFragment: Fragment() {
     private fun setupAdapter() {
         adapter = MatchHistoryAdapter()
         binding.rvMatchHistory.adapter = adapter
-
     }
-
-
 
 }

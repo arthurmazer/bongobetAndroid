@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/bet_type_fragment"
-        android:name="com.mazer.bongobet.ui.bet.step1.BetFragment"
+        android:name="com.mazer.bongobet.ui.bet.fragments.BetFragment"
         android:label="Bet Step 1">
         <action
             android:id="@+id/action_bet_to_bet_success"
@@ -49,7 +49,7 @@
 
     <fragment
         android:id="@+id/bet_success_fragment"
-        android:name="com.mazer.bongobet.ui.bet.step4.BetSuccessFragment"
+        android:name="com.mazer.bongobet.ui.bet.response.BetSuccessFragment"
         android:label="Bet Step 4">
         <argument
             android:name="puuid"

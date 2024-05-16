@@ -1,4 +1,4 @@
-package com.mazer.bongobet.ui.bet.step1
+package com.mazer.bongobet.ui.bet.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -193,7 +193,5 @@ class BetFragment : Fragment() {
         adapterbetPicker = BetTypeAdapter()
         binding.rvBets.adapter = adapterbetPicker
     }
-
-
 
 }

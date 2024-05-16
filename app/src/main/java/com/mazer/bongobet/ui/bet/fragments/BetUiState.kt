@@ -1,4 +1,4 @@
-package com.mazer.bongobet.ui.bet.step1
+package com.mazer.bongobet.ui.bet.fragments
 
 import com.mazer.bongobet.domain.entities.pojo.BetResponse
 import com.mazer.bongobet.domain.entities.BetType

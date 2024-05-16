@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="8dp"
+    app:cardCornerRadius="8dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/background_item_streamer"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_player_icon"
+            android:layout_width="92dp"
+            android:padding="4dp"
+            android:layout_height="128dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <ImageView
+            android:id="@+id/iv_twitch_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/tv_streamer_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_streamer_name"
+            android:src="@drawable/twitch_social_media_icon" />
+
+        <TextView
+            android:id="@+id/tv_twitch_channel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_light"
+            tools:text="shermanoveio"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_twitch_icon"
+            app:layout_constraintStart_toEndOf="@+id/iv_twitch_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_twitch_icon" />
+
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:text="@string/in_game_lol"
+            android:textSize="12sp"
+            android:textColor="@color/boston_blue"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/iv_twitch_icon"
+            app:layout_constraintTop_toBottomOf="@+id/iv_twitch_icon"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/tv_streamer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="top"
+            android:textSize="16sp"
+            tools:text="Player Name"
+            app:layout_constraintStart_toEndOf="@+id/iv_player_icon"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_icon_online"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/ic_online"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_twitch_channel"
+            app:layout_constraintStart_toEndOf="@+id/tv_twitch_channel"
+            app:layout_constraintTop_toTopOf="@+id/tv_twitch_channel" />
+
+        <ImageView
+            android:id="@+id/iv_icon_offline"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginStart="4dp"
+            app:tint="@color/red"
+            android:src="@drawable/ic_online"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_twitch_channel"
+            app:layout_constraintStart_toEndOf="@+id/tv_twitch_channel"
+            app:layout_constraintTop_toTopOf="@+id/tv_twitch_channel" />
+
+        <ImageButton
+            android:id="@+id/tv_watch_twitch_channel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            android:backgroundTint="@color/purple_200"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_remove_red_eye_24"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_icon_online"
+            app:layout_constraintStart_toEndOf="@+id/iv_icon_online"
+            app:layout_constraintTop_toTopOf="@+id/iv_icon_online" />
+
+
+        <ImageView
+            android:id="@+id/iv_streamer_rank"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            tools:src="@drawable/platinum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_apostar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_apostar"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_player_icon" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -11,6 +11,9 @@
     <!-- Home -->
     <string name="summoner_hint">Nome do Invocador + #TAG</string>
     <string name="btn_buscar">Buscar</string>
+    <string name="bet_twitch_title">Jogando Agora:</string>
+    <!-- Twitch Bet -->
+    <string name="in_game_lol">Em partida - League of Legends</string>
 
     <!-- Bet -->
     <string name="match_type_ranked_solo">Ranked Solo/Duo</string>

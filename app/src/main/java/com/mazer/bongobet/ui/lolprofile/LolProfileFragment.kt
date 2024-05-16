@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -16,6 +17,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.mazer.bongobet.R
 import com.mazer.bongobet.databinding.FragmentLolProfileBinding
 import com.mazer.bongobet.domain.entities.*
+import com.mazer.bongobet.ui.common.getRankDrawable
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -41,9 +43,6 @@ class LolProfileFragment : Fragment() {
         setupView()
     }
 
-
-
-
     private fun getArgs() {
         summonerName = args.summonerName
         puuid = args.puuid
@@ -58,7 +57,7 @@ class LolProfileFragment : Fragment() {
     }
 
     private fun setupMatchHistory() {
-        viewModel.handleEvent(LolProfileUiEvent.GetLolProfile(puuid, summonerName))
+        viewModel.handleEvent(LolProfileUiEvent.GetLolProfile(puuid))
     }
 
     private fun setupAdapter(matchHistory: List<MatchHistory>) {
@@ -149,49 +148,13 @@ class LolProfileFragment : Fragment() {
 
     private fun setupRanks(ranks: List<Rank>) {
         ranks.forEach { rank ->
-            when (rank.tier.lowercase()){
-                "iron" -> {
-                    setRankData(rank, R.drawable.iron)
-                }
-                "bronze" -> {
-                    setRankData(rank, R.drawable.bronze)
-                }
-                "silver" -> {
-                    setRankData(rank, R.drawable.silver)
-                }
-                "gold" -> {
-                    setRankData(rank, R.drawable.gold)
-                }
-                "platinum" -> {
-                    setRankData(rank, R.drawable.platinum)
-                }
-                "emerald" -> {
-                    setRankData(rank, R.drawable.emerald)
-                }
-                "diamond" -> {
-                    setRankData(rank, R.drawable.diamond)
-                }
-                "master" -> {
-                    setRankData(rank, R.drawable.master)
-                }
-                "grandmaster" -> {
-                    setRankData(rank, R.drawable.grandmaster)
-                }
-                "challenger" -> {
-                    setRankData(rank, R.drawable.challenger)
-                }
-                else -> {
-                    setRankData(rank, R.drawable.unranked, true)
-                }
-
-            }
+            setRankData(rank, rank.tier.getRankDrawable())
         }
     }
 
-
-
     @SuppressLint("SetTextI18n")
     private fun setRankData(rank: Rank, imgResource: Int, isUnranked: Boolean = false){
+
         when(rank.queueType){
             "Ranked Solo/Duo" -> {
                 Glide.with(binding.root.context).load(imgResource).into(binding.ivRankSoloDuo)
@@ -222,14 +185,12 @@ class LolProfileFragment : Fragment() {
                 binding.tvRankTftName.text = "${rank.tier} ${rank.rank}"
                 if(!isUnranked) {
                     val winrate = (100 * rank.wins / (rank.wins + rank.losses))
-                    binding.tvRankTftWinrate.text = "${winrate.toString()}%"
+                    binding.tvRankTftWinrate.text = "$winrate%"
                     binding.tvRankTftVitorias.text = rank.wins.toString()
                     binding.tvRankTftDerrotas.text = rank.losses.toString()
                 }else{
                     binding.layoutRankedTftStats.visibility = View.GONE
                 }
-
-
             }
         }
     }

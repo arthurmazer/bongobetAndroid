@@ -2,10 +2,7 @@ package com.mazer.bongobet.data.repos
 
 import com.mazer.bongobet.common.utils.Result
 import com.mazer.bongobet.data.remote.LolApiService
-import com.mazer.bongobet.domain.entities.BetType
-import com.mazer.bongobet.domain.entities.GameType
-import com.mazer.bongobet.domain.entities.LolUser
-import com.mazer.bongobet.domain.entities.RiotAccount
+import com.mazer.bongobet.domain.entities.*
 import com.mazer.bongobet.domain.entities.pojo.BetHistoryResponse
 import com.mazer.bongobet.domain.entities.pojo.BetRequest
 import com.mazer.bongobet.domain.entities.pojo.BetResponse
@@ -121,6 +118,20 @@ class LeagueOfLegendsRepositoryImpl(
             val betTypes = response.body()
             if (response.isSuccessful && betTypes != null){
                 emit(Result.Sucess(betTypes))
+            }else{
+                emit(Result.Error(response.message()))
+            }
+        }.catch {
+            emit(Result.Error(it.message))
+        }
+    }
+
+    override fun getStreamersTwitchList(): Flow<Result<List<Streamer>>> {
+        return flow{
+            val response = lolApiService.getStreamersTwitchList()
+            val streamersList = response.body()
+            if (response.isSuccessful && streamersList != null){
+                emit(Result.Sucess(streamersList))
             }else{
                 emit(Result.Error(response.message()))
             }
