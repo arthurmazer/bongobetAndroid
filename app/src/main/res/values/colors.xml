@@ -10,6 +10,7 @@
 
     <color name="the_green">#47e07d</color>
     <color name="the_green_light">#4047e07d</color>
+    <color name="grass">#00a86b</color>
     <color name="boston_blue">#3D8CC5</color>
     <color name="iron">#D9DDDD</color>
     <color name="shamrock">#43DB90</color>
@@ -20,6 +21,8 @@
     <color name="the_sea">#d5dff2</color>
     <color name="grey">#54575c</color>
     <color name="light_grey">#d5d8de</color>
+
+    <color name="transparent_grey">#4254575c</color>
 
 
     <color name="shimmer_background">#DDDDDD</color>

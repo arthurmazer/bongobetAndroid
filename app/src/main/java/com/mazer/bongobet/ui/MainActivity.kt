@@ -8,15 +8,11 @@ import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
-import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.mazer.bongobet.R
 import com.mazer.bongobet.databinding.ActivityMainBinding
 import com.mazer.bongobet.domain.entities.User
 import com.mazer.bongobet.domain.entities.Wallet
-import com.mazer.bongobet.ui.home.SummonerSearchUiState
 import com.mazer.bongobet.ui.login.LoginActivity
 import com.mazer.bongobet.ui.wallet.WalletActivity
 import kotlinx.coroutines.flow.collectLatest

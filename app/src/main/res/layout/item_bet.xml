@@ -6,13 +6,13 @@
     android:background="@drawable/background_btn_bet"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_bet_type"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/background_profile"
-        android:clipToOutline="true"
+        app:shapeAppearanceOverlay="@style/CircleShape"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,12 +45,39 @@
         tools:text="Faça o primeiro Baron da partida" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkboxAposta"
+        android:id="@+id/cb_apostar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="16dp"
         android:text="@string/btn_apostar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_bet_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bet_description" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_bet_value"
+        android:layout_width="wrap_content"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:inputType="numberDecimal"
+        android:visibility="gone"
+        android:maxLength="8"
+        android:layout_height="wrap_content"
+        android:hint="@string/label_value_bet"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cb_apostar"
+        app:layout_constraintStart_toEndOf="@+id/cb_apostar"
+        app:layout_constraintTop_toTopOf="@+id/cb_apostar" />
+
+    <TextView
+        android:id="@+id/tvRetorno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:visibility="gone"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/grass"
+        android:text="@string/bet_value_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_bet_type"
         app:layout_constraintTop_toBottomOf="@+id/tv_bet_description" />
@@ -68,15 +95,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/tv_quantity_bet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:inputType="numberDecimal"
-        android:enabled="false"
-        android:hint="@string/valor_aposta_hint"
-        app:layout_constraintBottom_toBottomOf="@+id/checkboxAposta"
-        app:layout_constraintStart_toEndOf="@+id/checkboxAposta" />
 </androidx.constraintlayout.widget.ConstraintLayout>

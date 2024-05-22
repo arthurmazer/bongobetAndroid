@@ -2,6 +2,8 @@
     <string name="app_name">BongoBet</string>
     <string name="gmail_web_client_id">579943763289-d1claa60s32r4v4kph8tfvocla8djghr.apps.googleusercontent.com</string>
 
+    <string name="game_option_name_league_of_legends">League of Legends</string>
+
     <!-- Login -->
     <string name="login_google">Login via GMAIL</string>
     <string name="login_facebook">Login via FACEBOOK</string>
@@ -29,17 +31,20 @@
     <string name="pager_opt_tft">TFT</string>
     <string name="pager_opt_aram">ARAM</string>
     <string name="btn_apostar">APOSTAR</string>
-    <!-- Bet Step 1 -->
+    <string name="dialog_bet_title">Apostar</string>
     <string name="label_apostar_em">Apostar em</string>
     <string name="label_match_type">Tipo de Partida</string>
     <string name="label_bet_type">Escolha suas apostas</string>
     <string name="label_confirmacao_apostas">Suas Apostas</string>
+    <string name="label_value_bet">R$ Insira o Valor</string>
     <string name="btn_avancar">Avançar</string>
     <string name="valor_aposta_hint">R$ Valor</string>
+    <string name="bet_value_label">Possível Retorno: %s</string>
+    <string name="bet_value_error">Informe um valor válido.</string>
     <!-- Confirmation Bet -->
     <string name="game_name_lol">League of Legends</string>
     <string name="label_game_name">Jogo: %s</string>
-    <string name="label_game_type">Modos: %s</string>
+    <string name="label_game_type">Modo: %s</string>
     <string name="label_bets">Suas Apostas</string>
     <string name="label_bet_quantity">Aposta: R$ %s</string>
     <string name="label_bet_odds">ODDS: %s</string>

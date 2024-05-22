@@ -6,14 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mazer.bongobet.databinding.ItemBetBinding
 import com.mazer.bongobet.domain.entities.BetType
 import com.mazer.bongobet.domain.entities.BetTypeListUi
+import com.mazer.bongobet.domain.entities.UserBet
 
-class BetTypeAdapter():  RecyclerView.Adapter<BetTypeViewHolder>() {
+class BetTypeAdapter(private val onBetChecked: (isChecked: Boolean, userBet: UserBet) -> Unit):  RecyclerView.Adapter<BetTypeViewHolder>() {
 
     private var betList: ArrayList<BetTypeListUi> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetTypeViewHolder {
         val binding = ItemBetBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return BetTypeViewHolder(binding)
+        return BetTypeViewHolder(binding, onBetChecked)
     }
 
     override fun onBindViewHolder(holder: BetTypeViewHolder, position: Int) {

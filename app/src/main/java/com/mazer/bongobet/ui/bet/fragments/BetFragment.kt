@@ -1,5 +1,6 @@
 package com.mazer.bongobet.ui.bet.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,12 +15,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.mazer.bongobet.R
 import com.mazer.bongobet.databinding.FragmentBetBinding
 import com.mazer.bongobet.domain.entities.BetTypeListUi
 import com.mazer.bongobet.domain.entities.GameType
 import com.mazer.bongobet.domain.entities.UserBet
 import com.mazer.bongobet.ui.adapters.BetTypeAdapter
-import com.mazer.bongobet.ui.bet.dialog.ConfirmBetDialogFragment
+import com.mazer.bongobet.ui.adapters.decoration.ItemBetDecoration
+import com.mazer.bongobet.ui.bet.dialog.ConfirmBetDialog
 import com.mazer.bongobet.ui.common.toUserBetList
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -36,8 +39,6 @@ class BetFragment : Fragment() {
     private var gameTypeName: String = ""
     private val args: BetFragmentArgs by navArgs()
     private lateinit var adapterbetPicker: BetTypeAdapter
-    private var betList: ArrayList<UserBet> = arrayListOf()
-    private var userEmail: String = ""
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -67,11 +68,10 @@ class BetFragment : Fragment() {
                 viewModel.handleEvents(BetUiEvent.LoadBetTypes(idGameType, puuid))
                 manageStepVisibility(2)
             }else{
-                betList = adapterbetPicker.getListBet().toUserBetList()
-                val newFragment = ConfirmBetDialogFragment.newInstance(betList) {
+                val newFragment = ConfirmBetDialog.newInstance(adapterbetPicker.getListBet().toUserBetList(), requireContext().getString(R.string.game_name_lol)) {
                     viewModel.handleEvents(
                         BetUiEvent.ConfirmBet(
-                            betList,
+                            adapterbetPicker.getListBet().toUserBetList(),
                             puuid
                         )
                     )
@@ -190,7 +190,11 @@ class BetFragment : Fragment() {
     }
 
     private fun setupAdapter() {
-        adapterbetPicker = BetTypeAdapter()
+        adapterbetPicker = BetTypeAdapter { isChecked, userBet ->
+        }
+        val verticalSpaceHeight = resources.getDimensionPixelSize(R.dimen.recommend_space_vertical)
+        val verticalSpaceItemDecoration = ItemBetDecoration(verticalSpaceHeight)
+        binding.rvBets.addItemDecoration(verticalSpaceItemDecoration)
         binding.rvBets.adapter = adapterbetPicker
     }
 
