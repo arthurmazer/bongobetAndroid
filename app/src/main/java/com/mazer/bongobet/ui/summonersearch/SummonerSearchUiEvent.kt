@@ -1,4 +1,4 @@
-package com.mazer.bongobet.ui.home
+package com.mazer.bongobet.ui.summonersearch
 
 sealed class SummonerSearchUiEvent {
 

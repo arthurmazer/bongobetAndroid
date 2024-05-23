@@ -18,7 +18,8 @@ import com.mazer.bongobet.domain.usecases.*
 import com.mazer.bongobet.ui.MainViewModel
 import com.mazer.bongobet.ui.bet.fragments.BetViewModel
 import com.mazer.bongobet.ui.bet.response.BetSuccessViewModel
-import com.mazer.bongobet.ui.home.SummonerSearchViewModel
+import com.mazer.bongobet.ui.home.HomeViewModel
+import com.mazer.bongobet.ui.summonersearch.SummonerSearchViewModel
 import com.mazer.bongobet.ui.login.LoginViewModel
 import com.mazer.bongobet.ui.lolprofile.LolProfileViewModel
 import com.mazer.bongobet.ui.wallet.WalletViewModel
@@ -82,9 +83,10 @@ val appModule = module {
     viewModel { LoginViewModel(get()) }
     viewModel { LolProfileViewModel(get())}
     viewModel { MainViewModel(get(), get()) }
-    viewModel { SummonerSearchViewModel(get())}
+    viewModel { SummonerSearchViewModel(get()) }
     viewModel { BetViewModel(get(), get()) }
     viewModel { BetSuccessViewModel(get()) }
     viewModel { WalletViewModel(get(), get()) }
+    viewModel { HomeViewModel() }
 
 }

@@ -1,4 +1,4 @@
-package com.mazer.bongobet.ui.home
+package com.mazer.bongobet.ui.summonersearch
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -26,7 +26,11 @@ class SummonerSearchViewModel(
                 if (result.data != null){
                     updateState(SummonerSearchUiState.SummonerFound(result.data))
                 }else{
-                    updateState(SummonerSearchUiState.SummonerNotFound(result.message ?: "Summoner não encontrado!"))
+                    updateState(
+                        SummonerSearchUiState.SummonerNotFound(
+                            result.message ?: "Summoner não encontrado!"
+                        )
+                    )
                 }
             }
         }
@@ -38,7 +42,11 @@ class SummonerSearchViewModel(
                 if (result.data != null){
                     updateState(SummonerSearchUiState.StreamerListFound(result.data))
                 }else{
-                    updateState(SummonerSearchUiState.StreamerListNotFound(result.message ?: "Stremamers não encontrado!"))
+                    updateState(
+                        SummonerSearchUiState.StreamerListNotFound(
+                            result.message ?: "Stremamers não encontrado!"
+                        )
+                    )
                 }
             }
         }

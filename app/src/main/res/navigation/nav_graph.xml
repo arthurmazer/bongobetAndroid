@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/summoner_search_fragment"
-        android:name="com.mazer.bongobet.ui.home.SummonerSearchFragment"
+        android:name="com.mazer.bongobet.ui.summonersearch.SummonerSearchFragment"
         android:label="Summoner Search Fragment">
         <action
             android:id="@+id/action_summoner_search_to_lol_profile"

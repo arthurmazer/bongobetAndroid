@@ -1,4 +1,4 @@
-package com.mazer.bongobet.ui.home
+package com.mazer.bongobet.ui.summonersearch
 
 import com.mazer.bongobet.domain.entities.RiotAccount
 import com.mazer.bongobet.domain.entities.Streamer

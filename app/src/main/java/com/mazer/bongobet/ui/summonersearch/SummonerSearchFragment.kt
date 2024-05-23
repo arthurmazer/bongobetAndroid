@@ -1,4 +1,4 @@
-package com.mazer.bongobet.ui.home
+package com.mazer.bongobet.ui.summonersearch
 
 import android.content.Intent
 import android.net.Uri

@@ -2,7 +2,14 @@
     <string name="app_name">BongoBet</string>
     <string name="gmail_web_client_id">579943763289-d1claa60s32r4v4kph8tfvocla8djghr.apps.googleusercontent.com</string>
 
+    <!-- Home -->
     <string name="game_option_name_league_of_legends">League of Legends</string>
+    <string name="game_option_name_tft">Teamfight Tatics</string>
+    <string name="game_option_name_counter_strike2">Counter-Strike 2</string>
+    <string name="game_option_name_valorant">Valorant</string>
+    <string name="home_title">Escolha o Jogo</string>
+    <string name="btn_go_bet_text">Procurar Apostas</string>
+
 
     <!-- Login -->
     <string name="login_google">Login via GMAIL</string>
@@ -10,7 +17,7 @@
     <string name="bem_vindo">Bem-Vindo</string>
     <string name="developed_by">Desenvolvido por A. Mazer</string>
 
-    <!-- Home -->
+    <!-- Summoner Search -->
     <string name="summoner_hint">Nome do Invocador + #TAG</string>
     <string name="btn_buscar">Buscar</string>
     <string name="bet_twitch_title">Jogando Agora:</string>
